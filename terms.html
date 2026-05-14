@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service — TriDeta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #0f1923;
+    --muted: #5a6a78;
+    --accent: #1b6ca8;
+    --accent-light: #e8f2fb;
+    --rule: #dde4ea;
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --amber: #fff5e0;
+    --amber-border: #f5a623;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--card);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(1.5rem, 6vw, 5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 34px; height: 34px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .header-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .header-link:hover { background: var(--accent); color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #132033 0%, #1e3a5f 100%);
+    color: #fff;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 5rem) clamp(2.5rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #ffc96e; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    max-width: 580px;
+  }
+
+  .hero-meta {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 2rem);
+  }
+
+  /* ── INTRO NOTICE ── */
+  .intro-notice {
+    background: var(--amber);
+    border: 1px solid var(--amber-border);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #6b4500;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .toc-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .toc ol { padding-left: 1.25rem; }
+  .toc li { margin-bottom: 0.35rem; }
+
+  .toc a {
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-num {
+    flex-shrink: 0;
+    width: 34px; height: 34px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .section p { color: #3d4f5e; margin-bottom: 0.85rem; }
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 0.85rem;
+  }
+
+  .section ul li {
+    color: #3d4f5e;
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .highlight-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    color: #1b4a75;
+    font-weight: 500;
+  }
+
+  .warning-box {
+    background: var(--amber);
+    border-left: 3px solid var(--amber-border);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    color: #6b4500;
+    font-weight: 500;
+  }
+
+  strong { color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem clamp(1.5rem, 6vw, 5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: var(--card);
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .footer-links { display: flex; gap: 1.5rem; }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    </div>
+    <span class="logo-name">TriDeta</span>
+  </a>
+  <a href="privacy-policy.html" class="header-link">Privacy Policy →</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge"><span class="badge-dot"></span> Legal Document</div>
+  <h1>Terms of Service</h1>
+  <div class="hero-meta">
+    <span>📅 Effective Date: [Insert Date]</span>
+    <span>📋 Version 1.0</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <div class="intro-notice">
+    ⚠️ <span>By accessing or using the TriDeta mobile application and platform, you agree to be bound by these Terms of Service. Please read them carefully before using the application.</span>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">Acceptance of Terms</a></li>
+      <li><a href="#s2">Description of Service</a></li>
+      <li><a href="#s3">User Accounts and Responsibilities</a></li>
+      <li><a href="#s4">Data Ownership</a></li>
+      <li><a href="#s5">Service Availability and Updates</a></li>
+      <li><a href="#s6">Limitation of Liability</a></li>
+      <li><a href="#s7">Termination</a></li>
+      <li><a href="#s8">Governing Law</a></li>
+      <li><a href="#s9">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Acceptance of Terms</h2>
+    </div>
+    <p>By accessing or using the TriDeta mobile application and platform, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the application.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Description of Service</h2>
+    </div>
+    <p>TriDeta is an intelligent school management system providing tools for:</p>
+    <ul>
+      <li>Student enrollment and biodata management</li>
+      <li>Academic result computation and report generation</li>
+      <li>Financial record keeping and fee management</li>
+      <li>Attendance tracking</li>
+      <li>Parent-school communication and push alerts</li>
+    </ul>
+    <p>The service relies on <strong>Role-Based Access Control (RBAC)</strong> to separate Admin, Teacher, Bursar, and Parent workflows, ensuring each role only accesses data appropriate to their function.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>User Accounts and Responsibilities</h2>
+    </div>
+    <ul>
+      <li><strong>Account Security:</strong> You are responsible for maintaining the confidentiality of your login credentials (passwords, PINs, or biometric setups). You agree to notify your School Administrator or TriDeta support immediately of any unauthorized use of your account.</li>
+      <li><strong>Accuracy of Data:</strong> School Administrators and authorized staff are solely responsible for the accuracy, legality, and integrity of the data (student biodata, grades, and fees) entered into the TriDeta platform.</li>
+      <li><strong>Appropriate Use:</strong> You agree not to misuse the platform. This includes attempting to bypass RBAC security, reverse engineering the app, or using the platform to distribute malicious software or spam via the alerts system.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Data Ownership</h2>
+    </div>
+    <div class="highlight-box">
+      🏫 The registered school retains full ownership of all student, academic, and financial data submitted to the platform.
+    </div>
+    <p>TriDeta claims no ownership rights over the student, financial, or academic data submitted to the platform by the school. TriDeta acts solely as a service provider hosting and processing this data on behalf of the school.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Service Availability and Updates</h2>
+    </div>
+    <p>We strive to ensure TriDeta is available 24/7. However, we do not guarantee uninterrupted or error-free operation. The platform may occasionally be down for:</p>
+    <ul>
+      <li>Scheduled maintenance or upgrades</li>
+      <li>Unforeseen server or network issues</li>
+    </ul>
+    <p>We reserve the right to modify, update, or discontinue features of the app at our discretion.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Limitation of Liability</h2>
+    </div>
+    <div class="warning-box">
+      ⚠️ To the maximum extent permitted by law, TriDeta and its developers shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use the platform.
+    </div>
+    <p>This includes, but is not limited to:</p>
+    <ul>
+      <li>Data loss or corruption</li>
+      <li>Errors in financial calculations (e.g., fee structures or receipts)</li>
+      <li>Inaccuracies in generated academic report cards</li>
+      <li>Disputes between parents and the school arising from platform use</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Termination</h2>
+    </div>
+    <ul>
+      <li><strong>By the School:</strong> Administrators may terminate their school's use of TriDeta at any time by contacting support to request permanent data deletion.</li>
+      <li><strong>By TriDeta:</strong> We reserve the right to suspend or terminate accounts that violate these Terms of Service, engage in fraudulent activity, or fail to pay applicable subscription fees (if relevant).</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Governing Law</h2>
+    </div>
+    <p>These Terms shall be governed and construed in accordance with the laws of <strong>[Insert Your Country/Region, e.g., the Federal Republic of Nigeria]</strong>, without regard to its conflict of law provisions.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Contact Us</h2>
+    </div>
+    <p>If you have any questions or concerns regarding these Terms of Service, please contact us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:[Insert Support Email]" style="color:var(--accent)">[Insert Support Email Address]</a></p>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">TriDeta</div>
+    <div class="footer-note">© 2025 TriDeta. All rights reserved.</div>
+  </div>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
